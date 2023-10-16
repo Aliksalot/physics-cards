@@ -1,0 +1,39 @@
+.navbar {
+    list-style-type: none;
+    width: 100%;
+    top: 0.5;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 10vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: gray;
+}
+
+.navbar-item {
+    margin-left: 10px
+}
+
+.navbar-item button {
+    font-size: 32px;
+}
+
+.navbar-right-item{
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+}
+
+.navbar-right-item button {
+    font-size: 32px;
+}
+  
