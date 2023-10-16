@@ -31,7 +31,7 @@ function moveRight(){
     clicks --
 }
 
-function createImage(num, className){
+function createImage(i, className){
     const image = document.createElement('img')
 
     image.id = i
@@ -41,9 +41,6 @@ function createImage(num, className){
     image.onload = () => {console.log('adding event listener'); image.addEventListener('mousedown', () => {console.log(i)})}
     console.log(image)    
     image.classList.add('image');
-    images_field.appendChild(image)
-}
-
 
     return image
 }
