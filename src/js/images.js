@@ -31,10 +31,9 @@ function moveRight(){
     clicks --
 }
 
-const image_count = 28
-
-for (let i=1; i <= image_count; i++){
+function createImage(num, className){
     const image = document.createElement('img')
+
     image.id = i
     image.src = `images/${i}.jpg`
     image.alt = `${i}.jpg`
@@ -44,3 +43,13 @@ for (let i=1; i <= image_count; i++){
     image.classList.add('image');
     images_field.appendChild(image)
 }
+
+
+    return image
+}
+
+const image_count = 28
+
+for (let i=1; i <= image_count; i++)
+    images_field.appendChild(createImage(i, 'image'))
+
