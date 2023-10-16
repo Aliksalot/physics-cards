@@ -6,9 +6,9 @@ const resize = () => {
     canvas.height = window.innerHeight
 }
 
-window.addEventListener('resize', resize)
-window.addEventListener('mousedown', mousedown)
-window.addEventListener('mouseup', mouseup)
+
+canvas.addEventListener('mousedown', mousedown)
+canvas.addEventListener('mouseup', mouseup)
 //window.addEventListener('keydown', keyDown)
 
 resize()

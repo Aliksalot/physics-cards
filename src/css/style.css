@@ -66,21 +66,18 @@ footer {
 .footerbar-left-item {
     position: absolute;
     top: 0;
+    z-index: 2;
     left: 0;
 }
 
 .footerbar-right-item {
     position: absolute;
     top: 0;
+    z-index: 2;
     right: 0;
 }
 
 .arrow{
-    font-size: 32px;
-    height: 20vh;
-}
-
-.right-arrow {
     font-size: 32px;
     height: 20vh;
 }
@@ -91,7 +88,7 @@ footer {
     width: 300px;
     margin-left: 5px;
     margin-right: 5px;
-    z-index: -1;
+    z-index: 1;
 }
 
 canvas{

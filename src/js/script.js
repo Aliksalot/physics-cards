@@ -39,13 +39,11 @@ function mouseup(event) {
     const verticalOffset = parseFloat(window.getComputedStyle(document.getElementById('canvas')).top);
     const offsetY = Math.floor(event.clientY - verticalOffset)
     const y = (offsetY - offsetY % grid.nodeHeight) / grid.nodeHeight
-    console.log(offsetY, verticalOffset, y)
     grid.placeNode(x,y, new _Node(-1))
 
 }
 
 function mousedown(event) {
-    console.log('asd', event)
 
 
 }

@@ -38,7 +38,9 @@ for (let i=1; i <= image_count; i++){
     image.id = i
     image.src = `images/${i}.jpg`
     image.alt = `${i}.jpg`
-    
+    image.draggable = false;
+    image.onload = () => {console.log('adding event listener'); image.addEventListener('mousedown', () => {console.log(i)})}
+    console.log(image)    
     image.classList.add('image');
     images_field.appendChild(image)
 }

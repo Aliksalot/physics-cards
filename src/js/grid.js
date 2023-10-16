@@ -4,7 +4,7 @@ class Grid{
         this.width = 100
         this.height = 100
         //in pixels
-        this.nodeWidth = 180
+        this.nodeWidth = 200
         this.nodeHeight = 0.5 * this.nodeWidth
         this.self = []
 
@@ -39,7 +39,6 @@ class Grid{
 
     placeNode(x, y, node){
         if(this.self[x][y].hasNode || !this.hasNeighbour(x, y)){
-            console.log('not placing on', x, y)
             return
         }
 
