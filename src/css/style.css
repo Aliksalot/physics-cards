@@ -67,20 +67,17 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
 }
 
 .footerbar-right-item {
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 2;
 }
 
 .arrow{
-    font-size: 32px;
-    height: 20vh;
-}
-
-.right-arrow {
     font-size: 32px;
     height: 20vh;
 }
@@ -91,6 +88,14 @@ footer {
     width: 300px;
     margin-left: 5px;
     margin-right: 5px;
-    z-index: -1;
+    z-index: 1;
+    transition: left 0.5s ease transform 0.3s ease; 
+}
+
+.image:hover {
+    position: fixed;
+    transform:scale(5);
+    left: 50vh;
+    top: 50vh;
 }
   
