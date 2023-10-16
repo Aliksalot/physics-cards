@@ -31,14 +31,18 @@ function moveRight(){
     clicks --
 }
 
+function createImage(num, className){
+    const image = document.createElement('img')
+    image.id = num
+    image.src = `images/${num}.jpg`
+    image.alt = `${num}.jpg`
+    
+    image.classList.add(className);
+
+    return image
+}
+
 const image_count = 28
 
-for (let i=1; i <= image_count; i++){
-    const image = document.createElement('img')
-    image.id = i
-    image.src = `images/${i}.jpg`
-    image.alt = `${i}.jpg`
-    
-    image.classList.add('image');
-    images_field.appendChild(image)
-}
+for (let i=1; i <= image_count; i++)
+    images_field.appendChild(createImage(i, 'image'))
