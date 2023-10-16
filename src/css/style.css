@@ -1,10 +1,13 @@
-.navbar {
+ul {
     list-style-type: none;
+    display: flex;
+}
+
+.navbar {
     width: 100%;
     top: 0.5;
     padding: 0;
     margin: 0;
-    display: flex;
 }
 
 header {
@@ -17,7 +20,9 @@ header {
     top: 0;
     left: 0;
     background-color: gray;
+    outline: black 3px solid;
 }
+
 
 .navbar-item {
     margin-left: 10px
@@ -35,5 +40,57 @@ header {
 
 .navbar-right-item button {
     font-size: 32px;
+}
+
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    height: 20vh;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: gray;
+    outline: black 3px solid;
+}
+
+.footerbar {
+    width: 100%;
+    bottom: 0.5;
+    padding: 0;
+    margin: 0;
+}
+
+.footerbar-left-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.footerbar-right-item {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.arrow{
+    font-size: 32px;
+    height: 20vh;
+}
+
+.right-arrow {
+    font-size: 32px;
+    height: 20vh;
+}
+
+.image {
+    position: relative;
+    height: 150px;
+    width: 300px;
+    margin-left: 5px;
+    margin-right: 5px;
+    z-index: -1;
 }
   
