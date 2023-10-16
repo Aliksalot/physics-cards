@@ -66,6 +66,7 @@ footer {
 .footerbar-left-item {
     position: absolute;
     top: 0;
+    z-index: 2;
     left: 0;
     z-index: 2;
 }
@@ -73,6 +74,7 @@ footer {
 .footerbar-right-item {
     position: absolute;
     top: 0;
+    z-index: 2;
     right: 0;
     z-index: 2;
 }
@@ -89,5 +91,16 @@ footer {
     margin-left: 5px;
     margin-right: 5px;
     z-index: 1;
+
+}
+
+canvas{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:10vh;
+
     transition: left 0.5s ease;
+
 }
