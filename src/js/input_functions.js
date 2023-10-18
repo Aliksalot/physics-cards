@@ -42,8 +42,11 @@ function mousedown(event){
         return
 
    grid.self[x][y].hasNode = false
-   appendImage(grid.self[x][y].node.image_num)
+   createNodeOnMouse(grid.self[x][y].node.image_num)
    grid.self[x][y].node = undefined
+   
+
+   
 
 }
 
