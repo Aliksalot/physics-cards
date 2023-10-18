@@ -50,7 +50,7 @@ function createNodeOnMouse(img){
     const image = new Image()
     image.src = `images/${img}.jpg`
     user_node = new _Node(image, img)
-    
+    popImage(img)
 }
 
 

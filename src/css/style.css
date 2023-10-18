@@ -25,21 +25,14 @@ header {
 
 
 .navbar-item {
-    margin-left: 10px
+    margin-left: 3vh;
 }
 
-.navbar-item button {
-    font-size: 5vh;
-}
 
 .navbar-right-item{
     position: absolute;
     right: 0;
-    margin-right: 10px;
-}
-
-.navbar-right-item button {
-    font-size: 5vh;
+    margin-right: 3vh;
 }
 
 
@@ -79,6 +72,38 @@ footer {
     z-index: 2;
 }
 
+header button{
+    background-position: center;
+    border: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 8vh;
+    height:8vh;
+    cursor: pointer;
+}
+
+#authors{
+    background-image: url('../../images/navbar/authors.png');
+}
+
+#zoom-in{
+    margin-left: 10vh;
+    background-image: url('../../images/navbar/zoom-in.png');
+}
+
+#zoom-out{
+    background-image: url('../../images/navbar/zoom-out.png');
+}
+
+#clear{
+    background-image: url('../../images/navbar/clear.png');
+}
+
+#help{
+    background-image: url('../../images/navbar/question-mark.png');
+}
+
 .arrow{
     font-size: 32px;
     height: 20vh;
@@ -116,5 +141,6 @@ canvas{
     width: 100%;
     height: 100%;
     left: 0;
+    z-index: -1;
     top:10vh;
 }

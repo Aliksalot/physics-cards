@@ -17,8 +17,9 @@ function mouseup(event) {
     const y = (offsetY - offsetY % grid.nodeHeight - y_offset_draw * grid.nodeHeight) / grid.nodeHeight
 
     if(grid.hasNeighbour(x,y) && !grid.self[x][y].hasNode){
-        popImage(user_node.image_num)
         grid.placeNode(x,y, user_node)
+    }else{
+        appendImage(user_node.image_num)
     }
     
     user_node = undefined

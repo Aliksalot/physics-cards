@@ -1,6 +1,8 @@
 const images_field = document.getElementsByClassName('footer-images')[0];
 
 const pixels = parseInt(window.innerWidth / 4)
+const total_image_count = 28
+let footer_images = []
 
 function moveLeft() {
     const images = images_field.querySelectorAll('.image');
@@ -50,6 +52,9 @@ function createImage(num, className) {
   image.classList.add(className);
 
   image.addEventListener('mouseover', () => {
+    if(user_node !== undefined)
+      return
+
     const popupImage = document.createElement('img');
     popupImage.src = `images/${num}.jpg`;
     popupImage.alt = `${num}.jpg`;
@@ -75,16 +80,49 @@ function createImage(num, className) {
   return image;
 }
 
-function appendImage(i){
+function appendImage(id){
+    /*let images = Array.from(images_field.children)
+    let insertPos = 0
+    while(insertPos < images.length && images[insertPos].id < id){
+      insertPos ++
+    }
+    if(insertPos === images.length){
+        images_field.appendChild(createImage(id, 'image'))
+        return
+    }
+    
+    images_field.insertBefore(createImage(id, 'image'), images[insertPos])*/
+
+    let insertPos = 0
+    while(insertPos < footer_images.length && footer_images[insertPos] < id){
+        insertPos ++
+    }
+
+    footer_images.splice(insertPos, 0, id)
+    reload()
+}
+
+function popImage(id){
+    const buffer = footer_images.filter(_id => _id !== id)
+    footer_images = buffer
+    reload()
+}
+
+function reload(){
+
+    removePopup()
+    while(images_field.firstChild)
+      images_field.removeChild(images_field.firstChild)
+
+    footer_images.forEach(image_id => {
+      images_field.appendChild(createImage(image_id, 'image'))
+    })
+}
+
+
+
+for (let i=2; i <= total_image_count; i++){
     images_field.appendChild(createImage(i, 'image'))
+    footer_images.push(i)
 }
-
-function popImage(i){
-  images_field.removeChild(document.getElementById(i))
-}
-
-const total_image_count = 28
-
-for (let i=1; i <= total_image_count; i++)
-    appendImage(i)
 
