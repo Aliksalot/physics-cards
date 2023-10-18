@@ -1,10 +1,20 @@
 const canvas = document.getElementById('canvas')
 const context = canvas.getContext('2d')
 
-//window.addEventListener('click', mouseUp)
-//window.addEventListener('keydown', keyDown)
+const resize = () => {
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+}
 
-setInterval(draw, 100)
+
+//canvas.addEventListener('mousedown', mousedown)
+canvas.addEventListener('mouseup', mouseup)
+
+window.addEventListener('keydown', keydown)
+window.addEventListener('mousemove', mousemove)
+
+resize()
+setInterval(draw, 80)
 setInterval(update, 700)
 
 start()

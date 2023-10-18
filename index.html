@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/style.css">
+
     <title>Physics cards</title>
 </head>
 <body>
@@ -14,18 +15,37 @@
                     ?
                 </button>
             </li>
+
             <li class="navbar-item">
                 <button>
                     Автори
                 </button>
             </li>
+
+            <li class = "navbar-item">
+                <button onclick = 'magnify()'>
+                    Magnify
+                </button>
+            </li>
+
+            <li class = 'navbar-item'>
+                <button onclick = 'unmagnify()'>
+                    Unmagnify
+                </button>
+            </li>
+
             <li class="navbar-right-item">
-                <button>
+                <button onclick = 'window.location.reload()'>
                         Изчисти
                 </button>
             </li>
         </ul>
     </header>
+
+
+
+    <canvas id = 'canvas'></canvas>
+
 
     <footer>
         <ul class="footerbar">
@@ -47,3 +67,9 @@
 </html>
 
 <script src="./src/js/images.js"></script>
+
+<script src="./src/js/node.js"></script>
+<script src="./src/js/grid.js"></script>
+<script src= './src/js/script.js'></script>
+<script src="./src/js/input_functions.js"></script>
+<script src = './src/js/init.js'></script>
