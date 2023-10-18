@@ -29,14 +29,9 @@ function draw (){
                 }
                 context.fillRect((i + x_offset_draw) * grid.nodeWidth , (j + y_offset_draw) * grid.nodeHeight, grid.nodeWidth, grid.nodeHeight)
             }else{
-                console.log('drawing image')
                 context.fillStyle = 'black'
                 context.drawImage(grid.self[i][j].node.image, (i + x_offset_draw) * grid.nodeWidth , (j + y_offset_draw) * grid.nodeHeight, grid.nodeWidth, grid.nodeHeight)
-                    
-                
             }
-            
-            
         }
     }
     if(user_node !== undefined){
@@ -54,7 +49,8 @@ function createNodeOnMouse(img){
     console.log('creating user node')
     const image = new Image()
     image.src = `images/${img}.jpg`
-    user_node = new _Node(image)
+    user_node = new _Node(image, img)
+    
 }
 
 

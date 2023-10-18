@@ -24,13 +24,20 @@ function moveRight() {
     const images = images_field.querySelectorAll('.image');
 
     const last_image = images[images.length - 1]
-
+  
     if (parseFloat(last_image.style.left) >= 0 || last_image.style.left === '') return;
 
     images.forEach((image) => {
         const currentRight = parseFloat(image.style.left) || 0;
         image.style.left = `${currentRight + pixels}px`;
     })
+}
+
+function removePopup(){
+  const popupImageContainer = document.querySelector('.popup-image-container');
+  if (popupImageContainer) {
+    popupImageContainer.remove();
+  }
 }
 
 function createImage(num, className) {
@@ -57,30 +64,27 @@ function createImage(num, className) {
   });
 
   image.addEventListener('mouseout', () => {
-    const popupImageContainer = document.querySelector('.popup-image-container');
-    if (popupImageContainer) {
-      popupImageContainer.remove();
-    }
+    removePopup()
   });
 
   image.addEventListener('mousedown', () => {
       createNodeOnMouse(num)
+      removePopup()
   })
 
   return image;
 }
-
 
 function appendImage(i){
     images_field.appendChild(createImage(i, 'image'))
 }
 
 function popImage(i){
-    images_field.removeChild(document.getElementById(i))
+  images_field.removeChild(document.getElementById(i))
 }
 
-const image_count = 28
+const total_image_count = 28
 
-for (let i=1; i <= image_count; i++)
+for (let i=1; i <= total_image_count; i++)
     appendImage(i)
 
