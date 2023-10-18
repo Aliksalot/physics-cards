@@ -29,7 +29,7 @@ header {
 }
 
 .navbar-item button {
-    font-size: 32px;
+    font-size: 5vh;
 }
 
 .navbar-right-item{
@@ -39,7 +39,7 @@ header {
 }
 
 .navbar-right-item button {
-    font-size: 32px;
+    font-size: 5vh;
 }
 
 
