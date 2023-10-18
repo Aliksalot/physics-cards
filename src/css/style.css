@@ -86,12 +86,12 @@ footer {
 
 .image {
     position: relative;
-    height: 150px;
-    width: 300px;
+    height: 18vh;
+    width: 36vh;
     margin-left: 5px;
     margin-right: 5px;
     z-index: 1;
-
+    transition: left 0.5s ease;
 }
 
 canvas{
@@ -101,6 +101,6 @@ canvas{
     left: 0;
     top:10vh;
 
-    transition: left 0.5s ease;
+   
 
 }

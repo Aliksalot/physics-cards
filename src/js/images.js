@@ -38,15 +38,23 @@ function createImage(i, className){
     image.src = `images/${i}.jpg`
     image.alt = `${i}.jpg`
     image.draggable = false;
-    image.onload = () => {console.log('adding event listener'); image.addEventListener('mousedown', () => {console.log(i)})}
+    image.onload = () => {image.addEventListener('mousedown', () => {createNodeOnMouse(i)})}
     console.log(image)    
     image.classList.add('image');
 
     return image
 }
 
+function appendImage(i){
+    images_field.appendChild(createImage(i, 'image'))
+}
+
+function popImage(i){
+    images_field.removeChild(document.getElementById(i))
+}
+
 const image_count = 28
 
 for (let i=1; i <= image_count; i++)
-    images_field.appendChild(createImage(i, 'image'))
+    appendImage(i)
 

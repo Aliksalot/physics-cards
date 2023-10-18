@@ -1,11 +1,19 @@
+
+
+const max_size = 300
+const min_size = 60
+const step = 20
+const start_size = 100
+const aspect_ratio = 0.5
+
 class Grid{
 
     constructor(){
         this.width = 100
         this.height = 100
         //in pixels
-        this.nodeWidth = 200
-        this.nodeHeight = 0.5 * this.nodeWidth
+        this.nodeWidth = start_size
+        this.nodeHeight = aspect_ratio * start_size
         this.self = []
 
         for(let i = 0; i < this.width; i ++){
@@ -44,6 +52,21 @@ class Grid{
 
         this.self[x][y].hasNode = true
         this.self[x][y].node = node
+    }
+
+    magnify(){
+        if(this.nodeWidth + step > max_size)
+            return
+
+        this.nodeWidth += step
+        this.nodeHeight = aspect_ratio * this.nodeWidth
+    }
+
+    unmagnify(){
+        if(this.nodeWidth - step < min_size)
+            return
+        this.nodeWidth -= step
+        this.nodeHeight = aspect_ratio * this.nodeWidth
     }
 
 }

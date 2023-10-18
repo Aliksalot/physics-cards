@@ -1,7 +1,14 @@
 const grid = new Grid()
 
-grid.self[3][3].hasNode = true
-grid.self[3][3].node = new _Node(-1)
+grid.self[55][53].hasNode = true
+const image = new Image()
+image.src = `images/${1}.jpg`
+grid.self[55][53].node = new _Node(image)
+let x_offset_draw = -50
+let y_offset_draw = -50
+
+let mouseX = 0, mouseY = 0
+let user_node = undefined;
 
 function draw (){
     const width = grid.width
@@ -10,44 +17,48 @@ function draw (){
         for(let j = 0; j < height; j ++){
             
             if(grid.self[i][j].hasNode){
+                console.log('drawing image')
                 context.fillStyle = 'black'
+                context.drawImage(grid.self[i][j].node.image, (i + x_offset_draw) * grid.nodeWidth , (j + y_offset_draw) * grid.nodeHeight, grid.nodeWidth, grid.nodeWidth)
             }else{
-                context.fillStyle = 'white'
-                if(i % 2 === 0 && j % 2 === 0){
+                context.fillStyle = 'lightgray'
+                /*if(i % 2 === 0 && j % 2 === 0){
                     context.fillStyle = 'lightblue'
                 }
                 if(i % 2 !== 0 && j % 2 !== 0){
                     context.fillStyle = 'lightblue'
+                }*/
+                if(!grid.self[i][j].hasNode && grid.hasNeighbour(i, j)){
+                    context.fillStyle = 'gray'
                 }
-                if(!grid.self[i][j].hasNode && grid.hasNeighbour(i, j))
-                    context.fillStyle = 'lightgray'
+                context.fillRect((i + x_offset_draw) * grid.nodeWidth , (j + y_offset_draw) * grid.nodeHeight, grid.nodeWidth, grid.nodeWidth)
+                    
                 
             }
             
-            context.fillRect(i * grid.nodeWidth, j * grid.nodeHeight, grid.nodeWidth, grid.nodeWidth)
+            
         }
     }
+    if(user_node !== undefined){
+        context.drawImage(user_node.image, mouseX - 0.5 * grid.nodeWidth, mouseY - 0.5 * grid.nodeHeight, grid.nodeWidth, grid.nodeHeight)
+    }
+        
+
 }
 
 function start() {
     //real
 }
 
-function mouseup(event) {
-    const x = (event.clientX - event.clientX % grid.nodeWidth) / grid.nodeWidth
-
-    const verticalOffset = parseFloat(window.getComputedStyle(document.getElementById('canvas')).top);
-    const offsetY = Math.floor(event.clientY - verticalOffset)
-    const y = (offsetY - offsetY % grid.nodeHeight) / grid.nodeHeight
-    grid.placeNode(x,y, new _Node(-1))
-
+function createNodeOnMouse(img){
+    console.log('creating user node')
+    const image = new Image()
+    image.src = `images/${img}.jpg`
+    user_node = new _Node(image)
 }
 
-function mousedown(event) {
-
-
-}
 
 function update() {
 
 }
+

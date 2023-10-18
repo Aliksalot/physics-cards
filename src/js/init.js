@@ -7,12 +7,14 @@ const resize = () => {
 }
 
 
-canvas.addEventListener('mousedown', mousedown)
+//canvas.addEventListener('mousedown', mousedown)
 canvas.addEventListener('mouseup', mouseup)
-//window.addEventListener('keydown', keyDown)
+
+window.addEventListener('keydown', keydown)
+window.addEventListener('mousemove', mousemove)
 
 resize()
-setInterval(draw, 100)
+setInterval(draw, 80)
 setInterval(update, 700)
 
 start()
