@@ -1,49 +1,65 @@
-const images_field = document.getElementsByClassName('footer-images')[0]
-
-const pixels = 200
+const images_field = document.getElementsByClassName('footer-images')[0];
+const pixels = 200;
 let clicks = 0;
 
-function moveLeft(){
-    const images = images_field.querySelectorAll('.image')
+function moveLeft() {
+  const images = images_field.querySelectorAll('.image');
 
-    if (clicks >= 35)
-        return
+  if (clicks >= 35) return;
 
-    images.forEach((image) => {
-        const currentLeft = parseInt(image.style.left) || 0
-        image.style.left = `${currentLeft - pixels}px`
-      });
+  images.forEach((image) => {
+    const currentLeft = parseInt(image.style.left) || 0;
+    image.style.left = `${currentLeft - pixels}px`;
+  });
 
-    clicks ++
+  clicks++;
 }
 
-function moveRight(){
-    const images = images_field.querySelectorAll('.image')
+function moveRight() {
+  const images = images_field.querySelectorAll('.image');
 
-    if (clicks <= 0)
-        return
+  if (clicks <= 0) return;
 
-    images.forEach((image) => {
-        const currentRight = parseFloat(image.style.left) || 0
-        image.style.left = `${currentRight + pixels}px`
-      });
+  images.forEach((image) => {
+    const currentRight = parseFloat(image.style.left) || 0;
+    image.style.left = `${currentRight + pixels}px`;
+  });
 
-    clicks --
+  clicks--;
 }
 
-function createImage(i, className){
-    const image = document.createElement('img')
+function createImage(num, className) {
+  const image = document.createElement('img');
+  image.id = num;
+  image.src = `images/${num}.jpg`;
+  image.alt = `${num}.jpg`;
 
-    image.id = i
-    image.src = `images/${i}.jpg`
-    image.alt = `${i}.jpg`
-    image.draggable = false;
-    image.onload = () => {image.addEventListener('mousedown', () => {createNodeOnMouse(i)})}
-    console.log(image)    
-    image.classList.add('image');
+  image.classList.add(className);
 
-    return image
+  image.addEventListener('mouseover', () => {
+    const popupImage = document.createElement('img');
+    popupImage.src = `images/${num}.jpg`;
+    popupImage.alt = `${num}.jpg`;
+    popupImage.classList.add('popup-image');
+
+    const popupImageContainer = document.createElement('div');
+    popupImageContainer.classList.add('popup-image-container');
+    popupImageContainer.appendChild(popupImage);
+
+
+    document.body.appendChild(popupImageContainer);
+  });
+
+  image.addEventListener('mouseout', () => {
+    const popupImageContainer = document.querySelector('.popup-image-container');
+    if (popupImageContainer) {
+      popupImageContainer.remove();
+    }
+  });
+
+  return image;
 }
+
 
 function appendImage(i){
     images_field.appendChild(createImage(i, 'image'))
