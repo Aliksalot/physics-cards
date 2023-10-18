@@ -6,15 +6,10 @@ let footer_images = []
 
 function moveLeft() {
     const images = images_field.querySelectorAll('.image');
-    let images_width = 0
-
-    images.forEach((image) => {
-        images_width += image.width + parseFloat(window.getComputedStyle(image).getPropertyValue('margin-left'))
-    })
 
     const last_image = images[images.length - 1]
 
-    if (parseFloat(last_image.style.left) + images_width < window.innerWidth) return;
+    if (last_image.getBoundingClientRect().left <= window.innerWidth) return;
 
     images.forEach((image) => {
         const currentLeft = parseInt(image.style.left) || 0;
@@ -25,9 +20,9 @@ function moveLeft() {
 function moveRight() {
     const images = images_field.querySelectorAll('.image');
 
-    const last_image = images[images.length - 1]
+    const first_image = images[0]
   
-    if (parseFloat(last_image.style.left) >= 0 || last_image.style.left === '') return;
+    if (first_image.getBoundingClientRect().left >= 0) return;
 
     images.forEach((image) => {
         const currentRight = parseFloat(image.style.left) || 0;
