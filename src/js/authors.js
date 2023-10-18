@@ -1,6 +1,6 @@
 let shouldShowAuthors = false
 
-function createImage (name, extension){
+function createAuthorImage (name, extension){
     const image = document.createElement("img");
     image.id = name;
     image.src = `images/${name}.${extension}`;
@@ -38,7 +38,7 @@ function showAuthors() {
 
         authorsDiv.appendChild(createParagraph("Ученици от 11Б на СПГЕ „Джон Атанасов“"));
         
-        authorsDiv.appendChild(createImage("JohnAtanasoffLogo", "png"))
+        authorsDiv.appendChild(createAuthorImage("JohnAtanasoffLogo", "png"))
 
         document.body.appendChild(authorsDiv);
 

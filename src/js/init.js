@@ -14,6 +14,7 @@ canvas.addEventListener('mousedown', mousedown)
 
 window.addEventListener('keydown', keydown)
 window.addEventListener('mousemove', mousemove)
+window.addEventListener('resize', reload())
 
 resize()
 setInterval(draw, 10)
