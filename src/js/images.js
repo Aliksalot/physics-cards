@@ -38,6 +38,7 @@ function createImage(num, className) {
   image.id = num;
   image.src = `images/${num}.jpg`;
   image.alt = `${num}.jpg`;
+  image.draggable = false;
 
   image.classList.add(className);
 
@@ -61,6 +62,10 @@ function createImage(num, className) {
       popupImageContainer.remove();
     }
   });
+
+  image.addEventListener('mousedown', () => {
+      createNodeOnMouse(num)
+  })
 
   return image;
 }

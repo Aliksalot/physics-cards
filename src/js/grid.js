@@ -1,9 +1,9 @@
 
 
-const max_size = 300
+const max_size = 1000
 const min_size = 60
-const step = 20
-const start_size = 100
+const step = 10
+const start_size = 500
 const aspect_ratio = 0.5
 
 class Grid{

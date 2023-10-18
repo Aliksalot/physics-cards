@@ -4,8 +4,8 @@ grid.self[55][53].hasNode = true
 const image = new Image()
 image.src = `images/${1}.jpg`
 grid.self[55][53].node = new _Node(image)
-let x_offset_draw = -50
-let y_offset_draw = -50
+let x_offset_draw = -54
+let y_offset_draw = -52
 
 let mouseX = 0, mouseY = 0
 let user_node = undefined;
@@ -16,11 +16,7 @@ function draw (){
     for(let i = 0; i < width; i ++){
         for(let j = 0; j < height; j ++){
             
-            if(grid.self[i][j].hasNode){
-                console.log('drawing image')
-                context.fillStyle = 'black'
-                context.drawImage(grid.self[i][j].node.image, (i + x_offset_draw) * grid.nodeWidth , (j + y_offset_draw) * grid.nodeHeight, grid.nodeWidth, grid.nodeWidth)
-            }else{
+            if(!grid.self[i][j].hasNode){
                 context.fillStyle = 'lightgray'
                 /*if(i % 2 === 0 && j % 2 === 0){
                     context.fillStyle = 'lightblue'
@@ -31,7 +27,11 @@ function draw (){
                 if(!grid.self[i][j].hasNode && grid.hasNeighbour(i, j)){
                     context.fillStyle = 'gray'
                 }
-                context.fillRect((i + x_offset_draw) * grid.nodeWidth , (j + y_offset_draw) * grid.nodeHeight, grid.nodeWidth, grid.nodeWidth)
+                context.fillRect((i + x_offset_draw) * grid.nodeWidth , (j + y_offset_draw) * grid.nodeHeight, grid.nodeWidth, grid.nodeHeight)
+            }else{
+                console.log('drawing image')
+                context.fillStyle = 'black'
+                context.drawImage(grid.self[i][j].node.image, (i + x_offset_draw) * grid.nodeWidth , (j + y_offset_draw) * grid.nodeHeight, grid.nodeWidth, grid.nodeHeight)
                     
                 
             }

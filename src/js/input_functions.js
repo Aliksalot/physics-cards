@@ -55,3 +55,17 @@ function keydown(event){
             break;
     }
 }
+
+function magnifyOnScroll(event){
+    event.preventDefault();
+
+    const direction = event.deltaY < 0 ? 'u' : 'd'
+
+    if(direction === 'u'){
+        grid.magnify()
+    }else{
+        grid.unmagnify()
+    }
+
+    console.log('lolls')
+}

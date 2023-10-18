@@ -9,12 +9,14 @@ const resize = () => {
 
 //canvas.addEventListener('mousedown', mousedown)
 canvas.addEventListener('mouseup', mouseup)
+canvas.addEventListener('wheel', magnifyOnScroll)
+
 
 window.addEventListener('keydown', keydown)
 window.addEventListener('mousemove', mousemove)
 
 resize()
-setInterval(draw, 80)
+setInterval(draw, 10)
 setInterval(update, 700)
 
 start()
