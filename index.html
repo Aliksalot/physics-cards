@@ -4,39 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/style.css">
-
+    <link rel="icon" href="favicon.png" type="image/x-icon">
     <title>Physics cards</title>
 </head>
 <body>
     <header>
         <ul class="navbar">
             <li class="navbar-item">
-                <button>
-                    ?
+                <button id = 'help'>
+                    
                 </button>
             </li>
 
             <li class="navbar-item">
-                <button onclick='showAuthors()'>
-                    Автори
+
+                <button id = 'authors' onclick='showAuthors()'>
+
                 </button>
             </li>
 
             <li class = "navbar-item">
-                <button onclick = 'magnify()'>
-                    Magnify
+                <button id = 'zoom-in' onclick = 'magnify()'>
+
                 </button>
             </li>
 
             <li class = 'navbar-item'>
-                <button onclick = 'unmagnify()'>
-                    Unmagnify
+                <button id = 'zoom-out' onclick = 'unmagnify()'>
+
                 </button>
             </li>
 
             <li class="navbar-right-item">
-                <button onclick = 'window.location.reload()'>
-                        Изчисти
+                <button id = 'clear' onclick = 'window.location.reload()'>
+
                 </button>
             </li>
         </ul>

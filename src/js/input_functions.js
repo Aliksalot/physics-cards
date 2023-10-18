@@ -15,8 +15,36 @@ function mouseup(event) {
     const verticalOffset = parseFloat(window.getComputedStyle(document.getElementById('canvas')).top);
     const offsetY = Math.floor(event.clientY - verticalOffset)
     const y = (offsetY - offsetY % grid.nodeHeight - y_offset_draw * grid.nodeHeight) / grid.nodeHeight
-    grid.placeNode(x,y, user_node)
+
+    if(grid.hasNeighbour(x,y) && !grid.self[x][y].hasNode){
+        grid.placeNode(x,y, user_node)
+    }else{
+        appendImage(user_node.image_num)
+    }
+    
     user_node = undefined
+}
+
+function mousedown(event){
+    console.log('mouse downing')
+    const x = (event.clientX - event.clientX % grid.nodeWidth - x_offset_draw * grid.nodeWidth) / grid.nodeWidth
+    const verticalOffset = parseFloat(window.getComputedStyle(document.getElementById('canvas')).top);
+    const offsetY = Math.floor(event.clientY - verticalOffset)
+    const y = (offsetY - offsetY % grid.nodeHeight - y_offset_draw * grid.nodeHeight) / grid.nodeHeight
+    
+    /*
+    console.log(x,y)
+    if(grid.self[x][y].hasNode){
+        console.log('hello')
+    }
+    */
+   if(x == 55 && y == 53)
+        return
+
+   grid.self[x][y].hasNode = false
+   appendImage(grid.self[x][y].node.image_num)
+   grid.self[x][y].node = undefined
+
 }
 
 function mousemove(event){

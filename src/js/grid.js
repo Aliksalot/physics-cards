@@ -2,7 +2,7 @@
 
 const max_size = 1000
 const min_size = 60
-const step = 10
+const step = 15
 const start_size = 500
 const aspect_ratio = 0.5
 

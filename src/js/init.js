@@ -8,9 +8,9 @@ const resize = () => {
 
 
 //canvas.addEventListener('mousedown', mousedown)
-canvas.addEventListener('mouseup', mouseup)
+window.addEventListener('mouseup', mouseup)
 canvas.addEventListener('wheel', magnifyOnScroll)
-
+canvas.addEventListener('mousedown', mousedown)
 
 window.addEventListener('keydown', keydown)
 window.addEventListener('mousemove', mousemove)
