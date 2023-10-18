@@ -1,31 +1,36 @@
 const images_field = document.getElementsByClassName('footer-images')[0];
-const pixels = 200;
-let clicks = 0;
+
+const pixels = parseInt(window.innerWidth / 4)
 
 function moveLeft() {
-  const images = images_field.querySelectorAll('.image');
+    const images = images_field.querySelectorAll('.image');
+    let images_width = 0
 
-  if (clicks >= 35) return;
+    images.forEach((image) => {
+        images_width += image.width + parseFloat(window.getComputedStyle(image).getPropertyValue('margin-left'))
+    })
 
-  images.forEach((image) => {
-    const currentLeft = parseInt(image.style.left) || 0;
-    image.style.left = `${currentLeft - pixels}px`;
-  });
+    const last_image = images[images.length - 1]
 
-  clicks++;
+    if (parseFloat(last_image.style.left) + images_width < window.innerWidth) return;
+
+    images.forEach((image) => {
+        const currentLeft = parseInt(image.style.left) || 0;
+        image.style.left = `${currentLeft - pixels}px`;
+    })
 }
 
 function moveRight() {
-  const images = images_field.querySelectorAll('.image');
+    const images = images_field.querySelectorAll('.image');
 
-  if (clicks <= 0) return;
+    const last_image = images[images.length - 1]
 
-  images.forEach((image) => {
-    const currentRight = parseFloat(image.style.left) || 0;
-    image.style.left = `${currentRight + pixels}px`;
-  });
+    if (parseFloat(last_image.style.left) >= 0 || last_image.style.left === '') return;
 
-  clicks--;
+    images.forEach((image) => {
+        const currentRight = parseFloat(image.style.left) || 0;
+        image.style.left = `${currentRight + pixels}px`;
+    })
 }
 
 function createImage(num, className) {
