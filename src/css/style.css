@@ -19,7 +19,7 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: gray;
+    background-color: #666666;
     outline: black 3px solid;
 }
 
@@ -52,7 +52,7 @@ footer {
     width: 100%;
     bottom: 0;
     left: 0;
-    background-color: gray;
+    background-color: #666666;
     outline: black 3px solid;
 }
 
@@ -117,4 +117,38 @@ canvas{
     height: 100%;
     left: 0;
     top:10vh;
+}
+
+.authors {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #666666;
+    padding: 20px;
+    border: 1px solid #888888;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.authors p {
+    font-size: 5vh;
+    margin: 5px;
+    color: #bbbbbb;
+}
+
+.authors a {
+    color: #cccccc;
+}
+
+
+.authors a:visited{
+    color: #999999;
+}
+
+.authors-images {
+    position: relative;
+    width: 20%;
+    height: auto;
+    left: 35%;
 }
