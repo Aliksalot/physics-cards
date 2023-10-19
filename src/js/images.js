@@ -81,18 +81,6 @@ function createImage(num, className) {
 }
 
 function appendImage(id){
-    /*let images = Array.from(images_field.children)
-    let insertPos = 0
-    while(insertPos < images.length && images[insertPos].id < id){
-      insertPos ++
-    }
-    if(insertPos === images.length){
-        images_field.appendChild(createImage(id, 'image'))
-        return
-    }
-    
-    images_field.insertBefore(createImage(id, 'image'), images[insertPos])*/
-
     let insertPos = 0
     while(insertPos < footer_images.length && footer_images[insertPos] < id){
         insertPos ++

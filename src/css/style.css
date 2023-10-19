@@ -131,6 +131,7 @@ header button{
     margin-right: 5px;
     z-index: 1;
     transition: left 0.5s ease;
+    cursor: grab;
 }
 
 .popup-image {
@@ -168,7 +169,7 @@ canvas{
     background-color: #666666;
     padding: 20px;
     border: 1px solid #888888;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -182,6 +183,18 @@ canvas{
     color: #cccccc;
 }
 
+.help {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    width: 70%;
+    transform: translate(-50%, -50%);
+    background-color: #666666;
+    padding: 20px;
+    border: 1px solid #888888;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
 
 .authors a:visited{
     color: #999999;
@@ -192,4 +205,26 @@ canvas{
     width: 20%;
     height: auto;
     left: 35%;
+}
+
+.help p {
+    font-size: 4vh;
+    margin: 5px;
+    color: #bbbbbb;
+}
+
+.help-bullet {
+    font-size: 3vh;
+    margin: 5px;
+    color: #bbbbbb;
+}
+
+.help ul {
+    list-style-type: disc;
+}
+
+.help-ordered {
+    font-size: 3vh;
+    margin: 5px;
+    color: #bbbbbb;
 }

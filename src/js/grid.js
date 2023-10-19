@@ -1,5 +1,3 @@
-
-
 const max_size = 1000
 const min_size = 60
 const step = 15
