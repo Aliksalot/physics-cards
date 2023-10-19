@@ -18,12 +18,6 @@ function draw (){
             
             if(!grid.self[i][j].hasNode){
                 context.fillStyle = 'lightgray'
-                /*if(i % 2 === 0 && j % 2 === 0){
-                    context.fillStyle = 'lightblue'
-                }
-                if(i % 2 !== 0 && j % 2 !== 0){
-                    context.fillStyle = 'lightblue'
-                }*/
                 if(!grid.self[i][j].hasNode && grid.hasNeighbour(i, j)){
                     context.fillStyle = 'gray'
                 }
@@ -34,6 +28,7 @@ function draw (){
             }
         }
     }
+    
     if(user_node !== undefined){
         context.drawImage(user_node.image, mouseX - 0.5 * grid.nodeWidth, mouseY - 0.5 * grid.nodeHeight, grid.nodeWidth, grid.nodeHeight)
     }
@@ -41,9 +36,7 @@ function draw (){
 
 }
 
-function start() {
-    //real
-}
+function start(){}
 
 function createNodeOnMouse(img){
     console.log('creating user node')
@@ -53,8 +46,4 @@ function createNodeOnMouse(img){
     popImage(img)
 }
 
-
-function update() {
-
-}
-
+function update(){}

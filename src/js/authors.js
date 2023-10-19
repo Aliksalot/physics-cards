@@ -11,7 +11,7 @@ function createAuthorImage (name, extension){
     return image;
 }
 
-function createParagraph(label, email){
+function createAuthorParagraph(label, email){
     const paragraph = document.createElement("p");
     paragraph.textContent = email ? `${label} - ` : label;
 
@@ -33,10 +33,10 @@ function showAuthors() {
         authorsDiv.className = "authors";
 
         
-        authorsDiv.appendChild(createParagraph("Александър Колев", "alexkolev05@gmail.com"));
-        authorsDiv.appendChild(createParagraph("Виктор Георгиев", "vrgeorgiev06@gmail.com"));
+        authorsDiv.appendChild(createAuthorParagraph("Александър Колев", "alexkolev05@gmail.com"));
+        authorsDiv.appendChild(createAuthorParagraph("Виктор Георгиев", "vrgeorgiev06@gmail.com"));
 
-        authorsDiv.appendChild(createParagraph("Ученици от 11Б клас на СПГЕ „Джон Атанасов“"));
+        authorsDiv.appendChild(createAuthorParagraph("Ученици от 11Б клас на СПГЕ „Джон Атанасов“"));
         
         authorsDiv.appendChild(createAuthorImage("JohnAtanasoffLogo", "png"))
 
@@ -45,5 +45,9 @@ function showAuthors() {
         return;
     }
 
+    removeAuthors();
+}
+
+function removeAuthors(){
     document.body.removeChild(document.getElementById("authorsDiv"));
 }
