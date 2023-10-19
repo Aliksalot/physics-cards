@@ -36,8 +36,6 @@ function draw (){
 
 }
 
-function start(){}
-
 function createNodeOnMouse(img){
     console.log('creating user node')
     const image = new Image()
@@ -45,6 +43,7 @@ function createNodeOnMouse(img){
     user_node = new _Node(image, img)
     popImage(img)
     closeAuthorsPopUp()
+    removeHelp()
 }
 
-function update(){}
+

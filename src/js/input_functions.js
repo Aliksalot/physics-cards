@@ -23,13 +23,17 @@ function mouseup(event) {
     }
     
     closeAuthorsPopUp()
+    removeHelp()
 
     user_node = undefined
 }
 
 function mousedown(event){
+    
     console.log('mouse downing')
     closeAuthorsPopUp()
+    removeHelp()
+
     const x = (event.clientX - event.clientX % grid.nodeWidth - x_offset_draw * grid.nodeWidth) / grid.nodeWidth
     const verticalOffset = parseFloat(window.getComputedStyle(document.getElementById('canvas')).top);
     const offsetY = Math.floor(event.clientY - verticalOffset)

@@ -38,7 +38,8 @@ function createHelpList(listItems, listType, className){
 }
 
 function showHelp() {
-    shouldShowHelp = ! shouldShowHelp;
+    
+    shouldShowHelp = !shouldShowHelp;
 
     if (shouldShowHelp){
         const helpDiv = document.createElement("div");
@@ -60,9 +61,12 @@ function showHelp() {
         return;
     }
 
-    removeHelp();
+    document.body.removeChild(document.getElementById("helpDiv"));
 }
 
 function removeHelp(){
-    document.body.removeChild(document.getElementById("helpDiv"));
+    if(shouldShowHelp){
+        shouldShowHelp = false;
+        document.body.removeChild(document.getElementById("helpDiv"));
+    }
 }

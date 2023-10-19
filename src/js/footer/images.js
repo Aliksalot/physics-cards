@@ -42,6 +42,7 @@ function showOnHover(num){
       return
 
     closeAuthorsPopUp()
+    removeHelp()
     const popupImage = document.createElement('img');
     popupImage.src = `images/${num}.jpg`;
     popupImage.alt = `${num}.jpg`;

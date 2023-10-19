@@ -18,6 +18,5 @@ window.addEventListener('resize', reload())
 
 resize()
 setInterval(draw, 10)
-setInterval(update, 700)
 
 start()
