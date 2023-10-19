@@ -51,6 +51,7 @@ function createNodeOnMouse(img){
     image.src = `images/${img}.jpg`
     user_node = new _Node(image, img)
     popImage(img)
+    closeAuthorsPopUp()
 }
 
 

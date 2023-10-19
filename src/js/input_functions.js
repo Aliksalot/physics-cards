@@ -22,11 +22,14 @@ function mouseup(event) {
         appendImage(user_node.image_num)
     }
     
+    closeAuthorsPopUp()
+
     user_node = undefined
 }
 
 function mousedown(event){
     console.log('mouse downing')
+    closeAuthorsPopUp()
     const x = (event.clientX - event.clientX % grid.nodeWidth - x_offset_draw * grid.nodeWidth) / grid.nodeWidth
     const verticalOffset = parseFloat(window.getComputedStyle(document.getElementById('canvas')).top);
     const offsetY = Math.floor(event.clientY - verticalOffset)
@@ -39,9 +42,6 @@ function mousedown(event){
    createNodeOnMouse(grid.self[x][y].node.image_num)
    grid.self[x][y].node = undefined
    
-
-   
-
 }
 
 function mousemove(event){

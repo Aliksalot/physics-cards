@@ -24,6 +24,14 @@ function createParagraph(label, email){
     return paragraph;
 }
 
+function closeAuthorsPopUp(){
+    if(shouldShowAuthors){
+        document.body.removeChild(document.getElementById("authorsDiv"));
+        shouldShowAuthors = false;
+    }
+        
+}
+
 function showAuthors() {
     shouldShowAuthors = ! shouldShowAuthors;
 

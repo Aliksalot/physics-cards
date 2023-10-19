@@ -37,19 +37,11 @@ function removePopup(){
   }
 }
 
-function createImage(num, className) {
-  const image = document.createElement('img');
-  image.id = num;
-  image.src = `images/${num}.jpg`;
-  image.alt = `${num}.jpg`;
-  image.draggable = false;
-
-  image.classList.add(className);
-
-  image.addEventListener('mouseover', () => {
+function showOnHover(num){
     if(user_node !== undefined)
       return
 
+    closeAuthorsPopUp()
     const popupImage = document.createElement('img');
     popupImage.src = `images/${num}.jpg`;
     popupImage.alt = `${num}.jpg`;
@@ -61,6 +53,19 @@ function createImage(num, className) {
 
 
     document.body.appendChild(popupImageContainer);
+}
+
+function createImage(num, className) {
+  const image = document.createElement('img');
+  image.id = num;
+  image.src = `images/${num}.jpg`;
+  image.alt = `${num}.jpg`;
+  image.draggable = false;
+
+  image.classList.add(className);
+
+  image.addEventListener('mouseover', () => {
+      showOnHover(num)
   });
 
   image.addEventListener('mouseout', () => {
