@@ -36,7 +36,7 @@ function showAuthors() {
         authorsDiv.appendChild(createParagraph("Александър Колев", "alexkolev05@gmail.com"));
         authorsDiv.appendChild(createParagraph("Виктор Георгиев", "vrgeorgiev06@gmail.com"));
 
-        authorsDiv.appendChild(createParagraph("Ученици от 11Б на СПГЕ „Джон Атанасов“"));
+        authorsDiv.appendChild(createParagraph("Ученици от 11Б клас на СПГЕ „Джон Атанасов“"));
         
         authorsDiv.appendChild(createAuthorImage("JohnAtanasoffLogo", "png"))
 
