@@ -31,13 +31,7 @@ function mousedown(event){
     const verticalOffset = parseFloat(window.getComputedStyle(document.getElementById('canvas')).top);
     const offsetY = Math.floor(event.clientY - verticalOffset)
     const y = (offsetY - offsetY % grid.nodeHeight - y_offset_draw * grid.nodeHeight) / grid.nodeHeight
-    
-    /*
-    console.log(x,y)
-    if(grid.self[x][y].hasNode){
-        console.log('hello')
-    }
-    */
+
    if(x == 55 && y == 53)
         return
 
@@ -61,25 +55,25 @@ function keydown(event){
     console.log(key, x_offset_draw, y_offset_draw)
     switch(key){
         //left
-        case 37:
+        case 39:
             if(x_offset_draw - 1 < -(grid.width - 15))
                 return
             x_offset_draw --
             break;
         //up
-        case 38:
+        case 40:
             if(y_offset_draw - 1 < -(grid.height - 10))
                 return
             y_offset_draw --
             break;
         //right
-        case 39:
+        case 37:
             if(x_offset_draw + 1 > 0)
                 return
             x_offset_draw ++
             break;
         //down
-        case 40:
+        case 38:
             if(y_offset_draw + 1 > 0)
                 return
             y_offset_draw ++
