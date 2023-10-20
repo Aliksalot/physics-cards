@@ -82,6 +82,13 @@ function keydown(event){
                 return
             y_offset_draw ++
             break;
+        case 49:
+            grid.magnify()
+        break;
+        case 50:
+            grid.unmagnify()
+            break;
+        
     }
 }
 
